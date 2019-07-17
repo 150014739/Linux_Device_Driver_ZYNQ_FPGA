@@ -1,0 +1,26 @@
+11:00:42 **** Build of configuration Debug for project ZCU106_CustomIP_APP ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../ZCU106_CustomIP_APP_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v8 gcc compiler'
+aarch64-none-elf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../ZCU106_CustomIP_APP_bsp/psu_cortexa53_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: ZCU106_CustomIP_APP.elf'
+'Invoking: ARM v8 gcc linker'
+aarch64-none-elf-gcc -Wl,-T -Wl,../src/lscript.ld -L../../ZCU106_CustomIP_APP_bsp/psu_cortexa53_0/lib -o "ZCU106_CustomIP_APP.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: ZCU106_CustomIP_APP.elf'
+' '
+'Invoking: ARM v8 Print Size'
+aarch64-none-elf-size ZCU106_CustomIP_APP.elf  |tee "ZCU106_CustomIP_APP.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  72568	   4600	  20768	  97936	  17e90	ZCU106_CustomIP_APP.elf
+'Finished building: ZCU106_CustomIP_APP.elf.size'
+' '
+
+11:00:43 Build Finished (took 1s.359ms)
+

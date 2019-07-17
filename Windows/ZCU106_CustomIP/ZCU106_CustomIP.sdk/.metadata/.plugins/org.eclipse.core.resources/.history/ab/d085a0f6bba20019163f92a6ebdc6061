@@ -1,0 +1,91 @@
+/*
+ * Copyright (c) 2012 Xilinx, Inc.  All rights reserved.
+ *
+ * Xilinx, Inc.
+ * XILINX IS PROVIDING THIS DESIGN, CODE, OR INFORMATION "AS IS" AS A
+ * COURTESY TO YOU.  BY PROVIDING THIS DESIGN, CODE, OR INFORMATION AS
+ * ONE POSSIBLE   IMPLEMENTATION OF THIS FEATURE, APPLICATION OR
+ * STANDARD, XILINX IS MAKING NO REPRESENTATION THAT THIS IMPLEMENTATION
+ * IS FREE FROM ANY CLAIMS OF INFRINGEMENT, AND YOU ARE RESPONSIBLE
+ * FOR OBTAINING ANY RIGHTS YOU MAY REQUIRE FOR YOUR IMPLEMENTATION.
+ * XILINX EXPRESSLY DISCLAIMS ANY WARRANTY WHATSOEVER WITH RESPECT TO
+ * THE ADEQUACY OF THE IMPLEMENTATION, INCLUDING BUT NOT LIMITED TO
+ * ANY WARRANTIES OR REPRESENTATIONS THAT THIS IMPLEMENTATION IS FREE
+ * FROM CLAIMS OF INFRINGEMENT, IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ */
+#include <linux/ioctl.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/ioctl.h>
+#include <fcntl.h>
+#include <string.h>
+
+#define DEVICE_FILE_NAME "/dev/myip"
+
+unsigned int read_reg(int fileDesc, unsigned int regIndex)
+{
+	//read(fileDesc, );
+
+	char buffer[8];
+
+	memcpy(&buffer[0], &regIndex, 4);
+	read(fileDesc, buffer, 8);
+
+	unsigned int regValue;
+	memcpy(&regValue, &buffer[4], 4);
+
+	return regValue;
+
+}
+
+void write_reg(int fileDesc, unsigned int regIndex, unsigned int regValue)
+{
+	unsigned char buffer[8];
+
+	memcpy(&buffer[0], &regIndex, 4);
+	memcpy(&buffer[4], &regValue, 4);
+
+	write(fileDesc, buffer, 8);
+}
+
+int main()
+{
+//	int Choice;
+//	int exitflag=1;
+	int file_desc;
+
+	printf("Xi: size of int is: %d\n", (int)(sizeof(int)));
+
+	printf("################################ \n\r");
+	printf("      Blink LED Application  \n\r");
+	printf("################################ \n\r");
+	file_desc = open(DEVICE_FILE_NAME, O_RDWR | O_SYNC);
+
+	printf("Xi: file_desc: %d\n", file_desc);
+
+	if (file_desc < 0)
+	{
+		printf("Can't open device file: %s\n", DEVICE_FILE_NAME);
+		exit(-1);
+	}
+
+	unsigned int regIndex = 0;
+	unsigned int regValue = 5;
+	write_reg(file_desc, regIndex, regValue);
+	printf("Write value %d to register %d.\n\r", regValue, regIndex);
+
+	write_reg(file_desc, regIndex, regValue);
+
+
+	int* addr = NULL;
+
+	addr = (int*)0x091ED000;
+
+    printf("Hello World, try to light LED\n");
+
+    *addr = 0x1;
+
+    return 0;
+}

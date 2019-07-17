@@ -1,0 +1,31 @@
+11:06:11 **** Auto Build of configuration Debug for project ZCU106_CustomIP_Linux_APP ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM v8 Linux gcc compiler'
+aarch64-linux-gnu-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'read_reg':
+../src/main.c:67:2: warning: implicit declaration of function 'read'; did you mean 'fread'? [-Wimplicit-function-declaration]
+  read(fileDesc, buffer, 8);
+  ^~~~
+  fread
+../src/main.c: In function 'write_reg':
+../src/main.c:82:2: warning: implicit declaration of function 'write'; did you mean 'fwrite'? [-Wimplicit-function-declaration]
+  write(fileDesc, buffer, 8);
+  ^~~~~
+  fwrite
+'Finished building: ../src/main.c'
+' '
+'Building target: ZCU106_CustomIP_Linux_APP.elf'
+'Invoking: ARM v8 Linux gcc linker'
+aarch64-linux-gnu-gcc  -o "ZCU106_CustomIP_Linux_APP.elf"  ./src/main.o   
+'Finished building target: ZCU106_CustomIP_Linux_APP.elf'
+' '
+'Invoking: ARM v8 Linux Print Size'
+aarch64-linux-gnu-size ZCU106_CustomIP_Linux_APP.elf  |tee "ZCU106_CustomIP_Linux_APP.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   1978	    600	      8	   2586	    a1a	ZCU106_CustomIP_Linux_APP.elf
+'Finished building: ZCU106_CustomIP_Linux_APP.elf.size'
+' '
+
+11:06:12 Build Finished (took 660ms)
+

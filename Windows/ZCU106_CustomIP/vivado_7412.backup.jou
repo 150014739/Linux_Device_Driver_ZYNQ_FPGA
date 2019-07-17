@@ -1,0 +1,62 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Thu Jun 27 08:06:12 2019
+# Process ID: 7412
+# Current directory: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7020 D:\Projects\FPGA_Zynq\Development\ZCU106_CustomIP\ZCU106_CustomIP.xpr
+# Log file: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/vivado.log
+# Journal file: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.xpr
+update_compile_order -fileset sources_1
+open_bd_design {D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:myip:1.0 myip_0
+endgroup
+set_property location {1 504 -402} [get_bd_cells myip_0]
+save_bd_design
+apply_bd_automation -rule xilinx.com:bd_rule:zynq_ultra_ps_e -config {apply_board_preset "1" }  [get_bd_cells zynq_ultra_ps_e_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/myip_0/S00_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins myip_0/S00_AXI]
+regenerate_bd_layout
+startgroup
+make_bd_pins_external  [get_bd_pins myip_0/led]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins myip_0/sw]
+endgroup
+regenerate_bd_layout
+regenerate_bd_layout
+save_bd_design
+validate_bd_design
+startgroup
+connect_bd_net [get_bd_pins zynq_ultra_ps_e_0/maxihpm1_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
+endgroup
+save_bd_design
+validate_bd_design
+save_bd_design
+file mkdir D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/constrs_1
+file mkdir D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/constrs_1/new
+close [ open D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/constrs_1/new/pin.xdc w ]
+add_files -fileset constrs_1 D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/constrs_1/new/pin.xdc
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+generate_target all [get_files  D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd]
+catch { config_ip_cache -export [get_ips -all system_zynq_ultra_ps_e_0_0] }
+catch { config_ip_cache -export [get_ips -all system_myip_0_0] }
+catch { config_ip_cache -export [get_ips -all system_rst_ps8_0_99M_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_ds_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_pc_0] }
+export_ip_user_files -of_objects [get_files D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd]
+launch_runs -jobs 4 {system_auto_ds_0_synth_1 system_auto_pc_0_synth_1 system_rst_ps8_0_99M_0_synth_1 system_zynq_ultra_ps_e_0_0_synth_1 system_myip_0_0_synth_1}
+make_wrapper -files [get_files D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd] -top
+add_files -norecurse D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/hdl/system_wrapper.v
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file mkdir D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk
+file copy -force D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/impl_1/system_wrapper.sysdef D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk/system_wrapper.hdf
+
+launch_sdk -workspace D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk -hwspec D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk/system_wrapper.hdf
+file copy -force D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/impl_1/system_wrapper.bit D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk/aa.bit

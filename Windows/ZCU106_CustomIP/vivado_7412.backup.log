@@ -1,0 +1,128 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Thu Jun 27 08:06:12 2019
+# Process ID: 7412
+# Current directory: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7020 D:\Projects\FPGA_Zynq\Development\ZCU106_CustomIP\ZCU106_CustomIP.xpr
+# Log file: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/vivado.log
+# Journal file: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:22 . Memory (MB): peak = 1151.789 ; gain = 458.750
+update_compile_order -fileset sources_1
+open_bd_design {D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd}
+Adding cell -- xilinx.com:ip:zynq_ultra_ps_e:3.2 - zynq_ultra_ps_e_0
+Successfully read diagram <system> from BD file <D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd>
+open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1151.789 ; gain = 0.000
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:myip:1.0 myip_0
+endgroup
+set_property location {1 504 -402} [get_bd_cells myip_0]
+save_bd_design
+Wrote  : <D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd> 
+Wrote  : <D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+apply_bd_automation -rule xilinx.com:bd_rule:zynq_ultra_ps_e -config {apply_board_preset "1" }  [get_bd_cells zynq_ultra_ps_e_0]
+INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/zynq_ultra_ps_e_0/M_AXI_HPM0_FPD} Slave {/myip_0/S00_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins myip_0/S00_AXI]
+</myip_0/S00_AXI/S00_AXI_reg> is being mapped into </zynq_ultra_ps_e_0/Data> at <0xA0000000 [ 4K ]>
+regenerate_bd_layout
+startgroup
+make_bd_pins_external  [get_bd_pins myip_0/led]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins myip_0/sw]
+endgroup
+regenerate_bd_layout
+regenerate_bd_layout
+save_bd_design
+Wrote  : <D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd> 
+Wrote  : <D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+validate_bd_design
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/zynq_ultra_ps_e_0/maxihpm1_fpd_aclk
+
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+startgroup
+connect_bd_net [get_bd_pins zynq_ultra_ps_e_0/maxihpm1_fpd_aclk] [get_bd_pins zynq_ultra_ps_e_0/pl_clk0]
+endgroup
+save_bd_design
+Wrote  : <D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd> 
+Wrote  : <D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
+validate_bd_design
+INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
+INFO: [PSU-1]  DP_AUDIO clock source: RPLL is also being used by other peripheral clocks. Their outputs may get impacted if any driver changes DP_AUDIO PLL source to support runtime audio change 
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+save_bd_design
+Wrote  : <D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd> 
+file mkdir D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/constrs_1
+file mkdir D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/constrs_1/new
+close [ open D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/constrs_1/new/pin.xdc w ]
+add_files -fileset constrs_1 D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/constrs_1/new/pin.xdc
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [BD 41-1662] The design 'system.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/synth/system.v
+VHDL Output written to : D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/sim/system.v
+VHDL Output written to : D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/hdl/system_wrapper.v
+INFO: [xilinx.com:ip:zynq_ultra_ps_e:3.2-0] system_zynq_ultra_ps_e_0_0: 
+Changes in your design (including the PCW configuration settings) are not automatically exported from Vivado to Xilinx's SDK, Petalinux or Yocto.
+This is by design to avoid disrupting existing embedded development efforts. To have any changes of your design taking effect in the embedded software flow please export your
+design by going through Vivado's main menu, click on File, then Export finally select Export Hardware, please ensure you click on the Include BitStream option.
+The auto-generated HDF file is all you need to import in Xilinx's SDK, Petalinux or Yocto for your changes to be reflected in the Embedded Software Flow.
+For more information, please consult PG201, section: Exporting PCW Settings to Embedded Software Flows
+INFO: [PSU-0] Address Range of DDR (0x7ff00000 to 0x7fffffff) is reserved by PMU for internal purpose.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block zynq_ultra_ps_e_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block myip_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps8_0_99M .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/ip/system_auto_ds_0/system_auto_ds_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_ds .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/hw_handoff/system.hwh
+Generated Block Design Tcl file D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/hw_handoff/system_bd.tcl
+Generated Hardware Definition File D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/synth/system.hwdef
+CRITICAL WARNING: [filemgmt 20-730] Could not find a top module in the fileset sources_1.
+Resolution: With the gui up, review the source files in the Sources window. Use Add Sources to add any needed sources. If the files are disabled, enable them. You can also select the file and choose Set Used In from the pop-up menu. Review if they are being used at the proper points of the flow.
+ERROR: [Common 17-70] Application Exception: Top module not set for fileset 'sources_1'. Please ensure that a valid value is provided for 'top'. The value for 'top' can be set/changed using the 'Top Module Name' field under 'Project Settings', or using the 'set_property top' Tcl command (e.g. set_property top <name> [current_fileset]).
+generate_target all [get_files  D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd]
+INFO: [BD 41-1637] Generated targets are already up-to-date for bd-design 'system' - hence not re-generating.
+catch { config_ip_cache -export [get_ips -all system_zynq_ultra_ps_e_0_0] }
+catch { config_ip_cache -export [get_ips -all system_myip_0_0] }
+catch { config_ip_cache -export [get_ips -all system_rst_ps8_0_99M_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_ds_0] }
+catch { config_ip_cache -export [get_ips -all system_auto_pc_0] }
+export_ip_user_files -of_objects [get_files D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd]
+launch_runs -jobs 4 {system_auto_ds_0_synth_1 system_auto_pc_0_synth_1 system_rst_ps8_0_99M_0_synth_1 system_zynq_ultra_ps_e_0_0_synth_1 system_myip_0_0_synth_1}
+ERROR: [Common 17-69] Command failed:  Runs 'system_auto_ds_0_synth_1', 'system_auto_pc_0_synth_1', 'system_rst_ps8_0_99M_0_synth_1', 'system_zynq_ultra_ps_e_0_0_synth_1', 'system_myip_0_0_synth_1' need to be reset before launching. The run can be reset using the Tcl command 'reset_run <run name>'.
+make_wrapper -files [get_files D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/system.bd] -top
+add_files -norecurse D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.srcs/sources_1/bd/system/hdl/system_wrapper.v
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Jun 27 08:12:40 2019] Launched system_auto_ds_0_synth_1, system_auto_pc_0_synth_1, system_rst_ps8_0_99M_0_synth_1, system_zynq_ultra_ps_e_0_0_synth_1, system_myip_0_0_synth_1, synth_1...
+Run output will be captured here:
+system_auto_ds_0_synth_1: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/system_auto_ds_0_synth_1/runme.log
+system_auto_pc_0_synth_1: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/system_auto_pc_0_synth_1/runme.log
+system_rst_ps8_0_99M_0_synth_1: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/system_rst_ps8_0_99M_0_synth_1/runme.log
+system_zynq_ultra_ps_e_0_0_synth_1: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/system_zynq_ultra_ps_e_0_0_synth_1/runme.log
+system_myip_0_0_synth_1: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/system_myip_0_0_synth_1/runme.log
+synth_1: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/synth_1/runme.log
+[Thu Jun 27 08:12:40 2019] Launched impl_1...
+Run output will be captured here: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/impl_1/runme.log
+file mkdir D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk
+file copy -force D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/impl_1/system_wrapper.sysdef D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk/system_wrapper.hdf
+
+launch_sdk -workspace D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk -hwspec D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk/system_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk -hwspec D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk/system_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.runs/impl_1/system_wrapper.bit D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.sdk/aa.bit
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 27 08:37:35 2019...

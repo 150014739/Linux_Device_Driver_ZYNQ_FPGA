@@ -1,0 +1,88 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 9404
+License: Customer
+
+Current time: 	Tue Jul 09 08:09:50 CST 2019
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1200
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 16 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	admin
+User home directory: C:/Users/admin
+User working directory: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/vivado.log
+Vivado journal file location: 	D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/vivado.jou
+Engine tmp dir: 	D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/.Xil/Vivado-9404-DESKTOP-2I11TUF
+
+GUI allocated memory:	159 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 603 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// [GUI Memory]: 18 MB (+16001kb) [00:00:05]
+// [Engine Memory]: 301 MB (+163928kb) [00:00:05]
+// [GUI Memory]: 22 MB (+3768kb) [00:00:10]
+// TclEventType: START_GUI
+// [GUI Memory]: 70 MB (+48825kb) [00:00:20]
+// [Engine Memory]: 528 MB (+222218kb) [00:00:20]
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: D:\Projects\FPGA_Zynq\Development\ZCU106_CustomIP\ZCU106_CustomIP.xpr. Version: Vivado v2018.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// [GUI Memory]: 87 MB (+14537kb) [00:00:21]
+// Tcl Message: open_project D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// HMemoryUtils.trashcanNow. Engine heap size: 631 MB. GUI used memory: 39 MB. Current time: 7/9/19 8:09:52 AM CST
+// [Engine Memory]: 634 MB (+83214kb) [00:00:26]
+// [Engine Memory]: 786 MB (+127041kb) [00:00:31]
+// [Engine Memory]: 940 MB (+120231kb) [00:00:36]
+// HMemoryUtils.trashcanNow. Engine heap size: 990 MB. GUI used memory: 36 MB. Current time: 7/9/19 8:10:07 AM CST
+// [Engine Memory]: 990 MB (+2626kb) [00:00:41]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ip_repo'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 

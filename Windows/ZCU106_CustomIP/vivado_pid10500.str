@@ -1,0 +1,93 @@
+/*
+
+Xilinx Vivado v2018.1 (64-bit) [Major: 2018, Minor: 1]
+SW Build: 2188600 on Wed Apr  4 18:40:38 MDT 2018
+IP Build: 2185939 on Wed Apr  4 20:55:05 MDT 2018
+
+Process ID: 10500
+License: Customer
+
+Current time: 	Tue Jul 09 08:08:08 CST 2019
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1200
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 16 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.1/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	admin
+User home directory: C:/Users/admin
+User working directory: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.1
+RDI_DATADIR: C:/Xilinx/Vivado/2018.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.1/bin
+
+Vivado preferences file location: C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2018.1/vivado.xml
+Vivado preferences directory: C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2018.1/
+Vivado layouts directory: C:/Users/admin/AppData/Roaming/Xilinx/Vivado/2018.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.1/lib/classes/planAhead.jar
+Vivado log file location: 	D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/vivado.log
+Vivado journal file location: 	D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/vivado.jou
+Engine tmp dir: 	D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/.Xil/Vivado-10500-DESKTOP-2I11TUF
+
+GUI allocated memory:	153 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 575 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// [GUI Memory]: 17 MB (+15058kb) [00:00:05]
+// [Engine Memory]: 300 MB (+163269kb) [00:00:05]
+// [GUI Memory]: 21 MB (+3816kb) [00:00:10]
+// TclEventType: START_GUI
+// [GUI Memory]: 49 MB (+28472kb) [00:00:18]
+// [Engine Memory]: 509 MB (+203614kb) [00:00:18]
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bv (ch):  Open Project : addNotify
+// Opening Vivado Project: D:\Projects\FPGA_Zynq\Development\ZCU106_CustomIP\ZCU106_CustomIP.xpr. Version: Vivado v2018.1 
+// [GUI Memory]: 62 MB (+10250kb) [00:00:19]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// HMemoryUtils.trashcanNow. Engine heap size: 625 MB. GUI used memory: 37 MB. Current time: 7/9/19 8:08:10 AM CST
+// [Engine Memory]: 640 MB (+110323kb) [00:00:24]
+// [Engine Memory]: 754 MB (+86259kb) [00:00:29]
+// [Engine Memory]: 890 MB (+102824kb) [00:00:34]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,007 MB. GUI used memory: 36 MB. Current time: 7/9/19 8:08:25 AM CST
+// [Engine Memory]: 1,007 MB (+75805kb) [00:00:39]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 68 MB (+2979kb) [00:00:50]
+// Tcl Message: open_project D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ZCU106_CustomIP.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP/ip_repo'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:44 ; elapsed = 00:00:32 . Memory (MB): peak = 1175.074 ; gain = 465.594 
+// Project name: ZCU106_CustomIP; location: D:/Projects/FPGA_Zynq/Development/ZCU106_CustomIP; part: xczu7ev-ffvc1156-2-e
+dismissDialog("Open Project"); // bv (ch)
+// [GUI Memory]: 79 MB (+8381kb) [00:00:54]

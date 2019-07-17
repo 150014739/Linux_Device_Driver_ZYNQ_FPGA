@@ -1,0 +1,13 @@
+08:41:46 **** Auto Build of configuration Debug for project ZCU106_CustomIP_Linux0 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v8 Linux gcc compiler'
+aarch64-linux-gnu-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c:20:10: fatal error: linux/init.h: No such file or directory
+ #include <linux/init.h>
+          ^~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/helloworld.o] ´íÎó 1
+
+08:41:46 Build Finished (took 254ms)
+

@@ -1,0 +1,80 @@
+/*
+ * Copyright (c) 2012 Xilinx, Inc.  All rights reserved.
+ *
+ * Xilinx, Inc.
+ * XILINX IS PROVIDING THIS DESIGN, CODE, OR INFORMATION "AS IS" AS A
+ * COURTESY TO YOU.  BY PROVIDING THIS DESIGN, CODE, OR INFORMATION AS
+ * ONE POSSIBLE   IMPLEMENTATION OF THIS FEATURE, APPLICATION OR
+ * STANDARD, XILINX IS MAKING NO REPRESENTATION THAT THIS IMPLEMENTATION
+ * IS FREE FROM ANY CLAIMS OF INFRINGEMENT, AND YOU ARE RESPONSIBLE
+ * FOR OBTAINING ANY RIGHTS YOU MAY REQUIRE FOR YOUR IMPLEMENTATION.
+ * XILINX EXPRESSLY DISCLAIMS ANY WARRANTY WHATSOEVER WITH RESPECT TO
+ * THE ADEQUACY OF THE IMPLEMENTATION, INCLUDING BUT NOT LIMITED TO
+ * ANY WARRANTIES OR REPRESENTATIONS THAT THIS IMPLEMENTATION IS FREE
+ * FROM CLAIMS OF INFRINGEMENT, IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ */
+#include <linux/ioctl.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/ioctl.h>
+#include <fcntl.h>
+#include <string.h>
+
+#define DEVICE_FILE_NAME "/dev/myip"
+
+unsigned int read_reg(int fileDesc, unsigned int regIndex)
+{
+	char buffer[8];
+
+	memcpy(&buffer[0], &regIndex, 4);
+	read(fileDesc, buffer, 8);
+
+	unsigned int regValue;
+	memcpy(&regValue, &buffer[4], 4);
+
+	return regValue;
+}
+
+void write_reg(int fileDesc, unsigned int regIndex, unsigned int regValue)
+{
+	unsigned char buffer[8];
+
+	memcpy(&buffer[0], &regIndex, 4);
+	memcpy(&buffer[4], &regValue, 4);
+
+	write(fileDesc, buffer, 8);
+}
+
+int main()
+{
+	int file_desc;
+
+	printf("################################################################ \n\r");
+	printf("  Control LED through Linux device driver for custom IP\n\r");
+	printf("################################################################ \n\r");
+	file_desc = open(DEVICE_FILE_NAME, O_RDWR | O_SYNC);
+
+	if (file_desc < 0)
+	{
+		printf("Error: Can't open device file: %s\n", DEVICE_FILE_NAME);
+		exit(-1);
+	}
+	else
+	{
+		printf("Info: Open custom device %s successfully.\n", DEVICE_FILE_NAME);
+	}
+
+	unsigned int regIndex = 1;
+	unsigned int regValue = 4;
+	write_reg(file_desc, regIndex, regValue);
+	printf("Info: Write value %d to register %d.\n\r", regValue, regIndex);
+
+	regValue = 0; //Reset;
+	regValue = read_reg(file_desc, regIndex);
+	printf("Info: Read value %d from register %d.\n\r", regValue, regIndex);
+
+
+    return 0;
+}
